@@ -1,4 +1,7 @@
 # Ignore this repo.
+[![Build Status](https://travis-ci.org/apache/openwhisk-repro-codecoverage-problem.svg?branch=master)](https://travis-ci.org/apache/openwhisk-repro-codecoverage-problem)
+
+
 Temporary repo to reproduce problem with openwhisk scoverage tool in integration git repo.
 PR https://github.com/apache/incubator-openwhisk/pull/3249
 
