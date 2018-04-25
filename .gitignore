@@ -1,0 +1,12 @@
+# Linux
+*~
+
+# Mac
+/blue/**/.DS_Store
+/.DS_Store
+
+# Gradle
+/blue/**/.gradle
+/.gradle
+/blue/**/build/
+!/blue/tools/build/

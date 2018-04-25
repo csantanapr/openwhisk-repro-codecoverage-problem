@@ -1,0 +1,4 @@
+[submodule "open"]
+	path = open
+	url = git@github.com:chetanmeh/incubator-openwhisk.git
+	branch = 3243-coverage-1
