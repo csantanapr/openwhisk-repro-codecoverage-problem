@@ -1,0 +1,2 @@
+def openPath = System.getenv("OPENWHISK_HOME") ?: '../open'
+apply from: new File(openPath).getAbsolutePath() + '/gradle/docker.gradle'

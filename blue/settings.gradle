@@ -1,0 +1,43 @@
+// OPEN PROJECTS
+def openPath = System.getenv("OPENWHISK_HOME") ?: '../open'
+def openDirectory = new File(openPath)
+include 'common:scala'; project(':common:scala').projectDir = new File(openDirectory, 'common/scala')
+
+include 'core:controller'; project(':core:controller').projectDir = new File(openDirectory, 'core/controller')
+include 'core:invoker'; project(':core:invoker').projectDir = new File(openDirectory, 'core/invoker')
+include 'actionRuntimes:nodejs6Action';    project(':actionRuntimes:nodejs6Action').projectDir =    new File(openDirectory, 'actionRuntimes/nodejs6Action')
+include 'actionRuntimes:actionProxy';      project(':actionRuntimes:actionProxy').projectDir =      new File(openDirectory, 'actionRuntimes/actionProxy')
+include 'actionRuntimes:pythonAction';     project(':actionRuntimes:pythonAction').projectDir =     new File(openDirectory, 'actionRuntimes/pythonAction')
+include 'actionRuntimes:python2Action';    project(':actionRuntimes:python2Action').projectDir =    new File(openDirectory, 'actionRuntimes/python2Action')
+include 'actionRuntimes:swift3.1.1Action'; project(':actionRuntimes:swift3.1.1Action').projectDir = new File(openDirectory, 'actionRuntimes/swift3.1.1Action')
+include 'actionRuntimes:javaAction';       project(':actionRuntimes:javaAction').projectDir =       new File(openDirectory, 'actionRuntimes/javaAction')
+include 'actionRuntimes:php7.1Action';     project(':actionRuntimes:php7.1Action').projectDir =     new File(openDirectory, 'actionRuntimes/php7.1Action')
+
+include 'services:kafka'; project(':services:kafka').projectDir = new File(openDirectory, 'services/kafka')
+include 'services:zookeeper'; project(':services:zookeeper').projectDir = new File(openDirectory, 'services/zookeeper')
+
+include 'sdk:docker'; project(':sdk:docker').projectDir = new File(openDirectory, 'sdk/docker')
+
+include 'open:tests'; project(':open:tests').projectDir = new File(openDirectory, 'tests')
+include 'open:tests:dat:blackbox:badaction'; project(':open:tests:dat:blackbox:badaction').projectDir = new File(openDirectory, 'tests/dat/blackbox/badaction')
+include 'open:tests:dat:blackbox:badproxy'; project(':open:tests:dat:blackbox:badproxy').projectDir = new File(openDirectory, 'tests/dat/blackbox/badproxy')
+
+
+// BLUE RUNTIMES
+include 'runtimes:nodejs-ibm'
+
+
+
+//include 'tests'
+
+rootProject.name = 'bluewhisk'
+
+gradle.ext.scala = [
+        version: '2.11.11',
+        compileFlags: ['-feature', '-unchecked', '-deprecation', '-Xfatal-warnings', '-Ywarn-unused-import']
+]
+
+gradle.ext.scalafmt = [
+        version: '1.5.0',
+        config: new File(rootProject.projectDir, '.scalafmt.conf')
+]
