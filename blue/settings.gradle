@@ -2,6 +2,7 @@
 def openPath = System.getenv("OPENWHISK_HOME") ?: '../open'
 def openDirectory = new File(openPath)
 include 'common:scala'; project(':common:scala').projectDir = new File(openDirectory, 'common/scala')
+include 'tools:admin'; project(':tools:admin').projectDir = new File(openDirectory, 'tools/admin')
 
 include 'core:controller'; project(':core:controller').projectDir = new File(openDirectory, 'core/controller')
 include 'core:invoker'; project(':core:invoker').projectDir = new File(openDirectory, 'core/invoker')
